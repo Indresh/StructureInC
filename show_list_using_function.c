@@ -2,6 +2,7 @@
 
 // Author : Indresh(kmr.ndrsh@gmail.com)
 // Linked list with simple manually created nodes
+// Display all nodes using a function
 
 
 /* #############
@@ -16,8 +17,11 @@ struct node
    struct node *next;       // self refrential structure.
  };
 
+void show_list(struct node *head);      // function prototype
+
 int main()
 {
+struct node *head;
 struct node a={10,NULL};
 
 struct node b={20,NULL};
@@ -30,16 +34,22 @@ b.next=&c;
 c.next=&d;
 d.next=&e;
 
+// Call show_list() function to display nodes in the linked list
+head=&a;
 
+show_list(head);
+return 0;
+}
 
- struct node *head;
-  head=&a;
+//show_list() function definition
+
+void show_list(struct node *head)
+ {
   while(head!=NULL)
-   { 
-    printf("%d-->",head->data);
-    head=head->next;
+   { printf("%d--> ",head->data);
+     head=head->next;
    }
-  printf("NULL");		// add NULL explicitly to print NULL, as head pointer has already reached NULL
-  printf("\n");                     
-  return 0;
+
+  printf("NULL");			// explicitly print NULL as head pointer has reached end of the list
+  printf("\n");
 }
