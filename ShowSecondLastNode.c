@@ -9,6 +9,7 @@
    OUTPUT:
 
    10-->20-->30-->40-->50-->NULL
+   The second last node is 40
 
    ############ */
 
@@ -40,9 +41,15 @@ c.next=&d;
 d.next=&e;
 
 // Call show_list() function to display nodes in the linked list
-head_copy=head;
+
 head=&a;
+
+// Call show_list() to display whole linked list
+
 show_list(head);
+
+// Call SecondLastNode() to show second last node in the list
+
 NODE _PointToSecondLastNode=SecondLastNode(head);
 printf("The second last node is %d\n",_PointToSecondLastNode->data);
 
@@ -62,6 +69,8 @@ void show_list(NODE first)
   printf("\n");
   
 }
+
+//SecondLastNode() function definition
 
 NODE SecondLastNode(NODE first)
  { NODE prev=NULL;
