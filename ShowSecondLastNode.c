@@ -26,7 +26,7 @@ NODE SecondLastNode(NODE first);
 
 int main()
 {
-NODE head,head_copy;
+NODE head;
 struct node a={10,NULL};
 
 struct node b={20,NULL};
